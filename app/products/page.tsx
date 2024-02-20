@@ -1,7 +1,6 @@
-// import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+export default function Products() {
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between p-24'>
 			<ul className='w-full flex flex-row'>
@@ -9,24 +8,13 @@ export default function Home() {
 					<Link href='/'>Home</Link>
 				</li>
 				<li className='m-1 px-4 py-2 text-xl text-white bg-slate-700'>
-					<Link href='products'>Products</Link>
-				</li>
-				<li className='m-1 px-4 py-2 text-xl text-white bg-slate-700'>
 					<Link href='about'>About</Link>
 				</li>
 			</ul>
 			;
 			<h1 className='text-8xl font-extrabold text-center text-red-700'>
-				HomePage
+				ProductsPage
 			</h1>
 		</main>
 	);
 }
-
-
-  {
-		/* <Products /> */
-	}
-	
-
-	
