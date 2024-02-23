@@ -1,4 +1,5 @@
 import { Suspense } from "react";
+import { Metadata } from "next";
 import Image from "next/image";
 
 import Loading from "../loading";
@@ -14,16 +15,41 @@ type Params = {
 	};
 };
 
+export async function generateMetadata({
+	params: { productId, userId },
+}: Params): Promise<Metadata> {
+	const productData: Promise<Product> = getProduct(productId);
+	const product: Product = await productData;
+
+	return {
+		title: product.title,
+		description: `This is the page of ${product.title}`,
+	};
+}
+
 export default async function ProductPage({
 	params: { productId, userId },
 }: Params) {
 	const productData: Promise<Product> = getProduct(productId);
 	const productDetailsData: Promise<Post[]> = getProductDetails(userId);
 
-	// const [product, productDetails] = await Promise.all([
-	// 	productData,
-	// 	productDetailsData,
-	// ]);
+	// alternative approach to dynamically render each product's details held at a different endpoint
+
+	/*
+	const [product, productDetails] = await Promise.all([
+	 	productData,
+	 	productDetailsData,
+	 ]);
+	*/
+
+	/*
+	return (
+	<>
+		<h2>{product.title}</h2>
+		<br />
+		<ProductDetails details={productDetails}
+	</>
+	) */
 
 	const product = await productData;
 

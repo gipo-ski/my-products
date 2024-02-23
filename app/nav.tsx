@@ -21,10 +21,10 @@ export default function Nav() {
 					<Link href='/'>Home</Link>
 				</li>
 				<li className='m-1 px-4 py-2 text-xl text-white bg-slate-700'>
-					<Link href='products'>Products</Link>
+					<Link href='/products'>Products</Link>
 				</li>
 				<li className='m-1 px-4 py-2 text-xl text-white bg-slate-700'>
-					<Link href='about'>About</Link>
+					<Link href='/about'>About</Link>
 				</li>
 			</ul>
 		</nav>
